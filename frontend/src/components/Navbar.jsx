@@ -5,6 +5,10 @@ import { NavLink, useNavigate } from 'react-router-dom'
 const Navbar = () => {
 
     const navigate =useNavigate();
+
+
+
+
     
     const [showMenu,setShowMenu]=useState(false)
     const [token,setToken]=useState(true)
@@ -13,7 +17,7 @@ const Navbar = () => {
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400'>
         {/* <div className='flex '> */}
 
-        <img  src={assets.logo} className=' w-40 cursor-pointer' alt="" />
+        <img onClick={()=>navigate('/')} src={assets.logo} className=' w-40 cursor-pointer' alt="" />
         {/* <h1 className=''>Doctor-support</h1> */}
         {/* </div> */}
 
@@ -44,7 +48,7 @@ const Navbar = () => {
                     <div className='absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block'>
                         <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
                             <p onClick={()=>navigate('my-profile')} className='hover:text-black cursor-pointer'>My Profile</p>
-                            <p onClick={()=>navigate('my-appointment')} className='hover:text-black cursor-pointer'>My Appointments</p>
+                            <p onClick={()=>navigate('my-appointments')} className='hover:text-black cursor-pointer'>My Appointments</p>
                             <p onClick={()=>setToken(false)} className='hover:text-black cursor-pointer'>LogOut</p>
                         </div>
                     </div>
